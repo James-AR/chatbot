@@ -28,9 +28,7 @@
 </template>
 
 <script setup lang="ts">
-const isChatting = useState("isChatting", () => {
-  return false;
-});
+const isChatting = useIsChatting();
 function handleSubmit() {
   isChatting.value = true;
 }
