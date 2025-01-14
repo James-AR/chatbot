@@ -2,6 +2,7 @@
   <form @submit.prevent="handleSubmit" class="relative">
     <textarea
       v-model.trim="newMessage"
+      @keypress.enter.prevent="handleSubmit"
       class="transition p-4 w-full text-sm border border-slate-300/60 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 pr-16 rounded-xl resize-none"
       placeholder="Enter your message..."
     ></textarea>
