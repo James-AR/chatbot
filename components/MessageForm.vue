@@ -28,7 +28,28 @@
 
 <script setup lang="ts">
 const newMessage = ref("");
+const messages = useMessages();
+const { customerInitials } = useCustomer();
+
 function handleSubmit() {
+  messages.value.push({
+    name: customerInitials.value,
+    message: newMessage.value,
+    isBruno: false,
+    timestamp: new Date().toLocaleString([], {
+      timeStyle: "short",
+    }),
+  });
+
   newMessage.value = "";
+
+  messages.value.push({
+    name: "Bruno",
+    message: newMessage.value,
+    isBruno: true,
+    timestamp: new Date().toLocaleString([], {
+      timeStyle: "short",
+    }),
+  });
 }
 </script>
