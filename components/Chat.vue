@@ -22,7 +22,11 @@
       class="flex flex-col gap-3.5 py-5 px-3 overflow-y-scroll max-h-[400px]"
     >
       <!-- To flip message use "flex-row-reverse" -->
-      <div v-for="message in messages" class="flex items-end gap-3">
+      <div
+        v-for="message in messages"
+        class="flex items-end gap-3"
+        :class="{ 'flex-row-reverse': !message.isBruno }"
+      >
         <!-- Profile Image -->
         <img
           v-if="message.isBruno"
